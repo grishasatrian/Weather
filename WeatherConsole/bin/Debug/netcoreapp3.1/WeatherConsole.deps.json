@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "WeatherConsole/1.0.0": {
+        "dependencies": {
+          "Weather.bll": "1.0.0"
+        },
+        "runtime": {
+          "WeatherConsole.dll": {}
+        }
+      },
+      "Weather.bll/1.0.0": {
+        "runtime": {
+          "Weather.bll.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WeatherConsole/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Weather.bll/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model WeatherMVC.Models.WeatherModel
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    
+<div class="card text-center">
+    <div class=" shadow-lg card">
+        <br />
+        <div class=" card-body border-info">
+            <h5 class="card-title"> Please Input the City Name </h5>
+            @Html.TextBoxFor(t => t.CityName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.CityName)
+            <br />
+            <button type="submit" class="btn btn-info">Get Weather</button>
+            <button type="button" onclick="emptyInput()" class="btn btn-outline-dark" style="margin:5px;">Clear</button>
+
+        </div>
+    </div>
+    </div>
+    <br />
+
+    @if (Model.WeatherData != null && Model.WeatherData.main != null)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Temperature °C </th>
+                    <th scope="col">Feels like</th>
+                    <th scope="col">Humidity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.WeatherData.main.temp</td>
+                    <td>@Model.WeatherData.main.feels_like</td>
+                    <td>@Model.WeatherData.main.humidity</td>
+                </tr>
+            </tbody>
+        </table>
+    }
+    }
+<script type="text/javascript" language="javascript">
+    function emptyInput() {
+        document.getElementById('CityName').value = '';
+    }
+</script>
